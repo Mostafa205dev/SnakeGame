@@ -6,19 +6,19 @@ Control the snake with your keyboard, eat food to grow, and avoid crashing into 
 -------------------------------------------------------------------------------------------------------------------
 🎮 Features
 
-Smooth grid-based movement
+- Smooth grid-based movement
 
-Random food placement
+- Random food placement
 
-Snake grows when food is eaten
+- Snake grows when food is eaten
 
-Score counter (earn +10 per food)
+- Score counter (earn +10 per food)
 
-Game Over detection (self-collision or wall hit)
+- Game Over detection (self-collision or wall hit)
 
-Play Again option (restart without restarting program)
+- Play Again option (restart without restarting program)
 
-Simple and clean Swing GUI
+- Simple and clean Swing GUI
 
 -------------------------------------------------------------------------------------------------------------------
 🖼️ Screenshot
