@@ -92,9 +92,9 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
         }
 
         if (gameover) {
-            // g.setColor(Color.white); 
+            // g.setColor(Color.white);
             g.setFont(new Font("Arial", Font.BOLD, 50)); // change size here
-            g.drawString("GAME OVER", boardwidth / 2 - 150, boardheight / 2);
+            g.drawString("GAME OVER", boardwidth / 2 - 150, boardheight / 2 - 100);
         }
 
     }
@@ -157,7 +157,31 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
 
         if (gameover) {
             gameloop.stop();
+
+            // Ask the player if they want to play again
+            int choice = JOptionPane.showConfirmDialog(
+                    this,
+                    "Do you want to play again?",
+                    "Game Over",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (choice == JOptionPane.YES_OPTION) {
+                restartGame(); // restart if YES
+            } else {
+                System.exit(0); // exit game if NO
+            }
         }
+    }
+
+    // restart game method
+    private void restartGame() {
+        snakehead = new tile(5, 5);
+        snakebody.clear();
+        velocityx = 0;
+        velocityy = 0;
+        placefood();
+        gameover = false;
+        gameloop.start();
     }
 
     // these are 3 methods from keylistener we will use just keypressed
