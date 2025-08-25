@@ -1,22 +1,24 @@
 🐍 Snake Game (Java Swing)
 
-A simple Snake Game built in Java using Swing for the GUI.
-The player controls the snake with arrow keys, eats food to grow, and avoids colliding with itself or the walls.
+A classic Snake Game built in Java Swing.
+Control the snake with your keyboard, eat food to grow, and avoid crashing into yourself or the walls.
 
 -------------------------------------------------------------------------------------------------------------------
 🎮 Features
 
-Classic Snake gameplay
+Smooth grid-based movement
 
 Random food placement
 
-Growing snake body when food is eaten
+Snake grows when food is eaten
 
-Game Over detection when hitting walls or self
+Score counter (earn +10 per food)
 
-Popup option to Play Again or Exit
+Game Over detection (self-collision or wall hit)
 
-Grid-based display
+Play Again option (restart without restarting program)
+
+Simple and clean Swing GUI
 
 -------------------------------------------------------------------------------------------------------------------
 🖼️ Screenshot
