@@ -39,6 +39,9 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
     int velocityx;
     int velocityy;
 
+    // score
+    int score = 0;
+
     public snakegame(int bw, int bh) {
         this.boardheight = bh;
         this.boardwidth = bw;
@@ -91,10 +94,20 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
             g.fillRect(snakepart.x * tilesize, snakepart.y * tilesize, tilesize, tilesize);
         }
 
+        // score
+        g.setColor(Color.white);
+        g.setFont(new Font("Arial", Font.PLAIN, 20));
+        g.drawString("Score: " + score, 10, 20);
+
+        // game over
         if (gameover) {
-            // g.setColor(Color.white);
-            g.setFont(new Font("Arial", Font.BOLD, 50)); // change size here
+            g.setFont(new Font("Arial", Font.BOLD, 50));
+            g.setColor(Color.green);
             g.drawString("GAME OVER", boardwidth / 2 - 150, boardheight / 2 - 100);
+
+            g.setFont(new Font("Arial", Font.PLAIN, 30));
+            g.setColor(Color.white);
+            g.drawString("Final Score: " + score, boardwidth / 2 - 100, boardheight / 2 - 70);
         }
 
     }
@@ -114,6 +127,7 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
         // eat food
         if (collision(snakehead, food)) {
             snakebody.add(new tile(food.x, food.y));
+            score += 10;
             placefood();
         }
 
@@ -179,6 +193,7 @@ public class snakegame extends JPanel implements ActionListener, KeyListener {
         snakebody.clear();
         velocityx = 0;
         velocityy = 0;
+        score = 0;
         placefood();
         gameover = false;
         gameloop.start();
